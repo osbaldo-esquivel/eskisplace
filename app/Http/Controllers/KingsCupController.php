@@ -10,6 +10,8 @@ class KingsCupController extends Controller
     }
     public function index(Request $request)
     {
-        return view('kings_cup');
+        return view('kings_cup', [
+            'start' => 'back',
+        ]);
     }
 }

@@ -6,7 +6,6 @@
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">Games</div>
-
                 <div class="card-body">
                     <div class="float-left">
                         <a href="{{ route('kings-cup') }}">
