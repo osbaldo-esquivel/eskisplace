@@ -10934,3 +10934,25 @@ body {
   margin-bottom: 30px;
 }
 
+.cards {
+  height: 350px;
+  width: 200px;
+}
+
+.first-card {
+  padding-left: 40px;
+}
+
+.second-card {
+  padding-left: 60px;
+}
+
+.col-md-8 {
+  width: 100%;
+}
+
+#number-card {
+  height: 330px;
+  width: 200px;
+}
+

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\KingsCupController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -23,3 +24,4 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/posoy-dos', 'PosoyDosController@index')->name('posoy-dos');
 Route::get('/kings-cup', 'KingsCupController@index')->name('kings-cup');
 Route::get('/about', 'AboutController@index')->name('about');
+Route::post('/submit-kings', 'KingsCupController@submit');
