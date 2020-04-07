@@ -71,14 +71,12 @@ class KingsCupController extends Controller
 
         array_shift($current_cards);
 
-        KingsCupGame::where('id', $request->input('game-id'))->update([
-            'status' => 'in_progress',
-            'user_id' => $request->user()->id,
-            'turns' => $turn,
-            'users' => json_encode([null]),
-            'last_turn' => $current_cards[0],
-            'winner' => null,
-        ]);
+        $this->updateGame(
+            $request->input('game-id'),
+            $turn,
+            $request->user()->id,
+            $current_cards[0]
+        );
 
         return redirect()->route('kings-cup', [
             'turn' => $turn,
@@ -103,5 +101,17 @@ class KingsCupController extends Controller
         $game->save();
 
         return $game->getId();
+    }
+
+    private function updateGame(string $game_id, int $turn, int $user_id, string $last_turn): void
+    {
+        KingsCupGame::where('id', $game_id)->update([
+            'status' => 'in_progress',
+            'user_id' => $user_id,
+            'turns' => $turn,
+            'users' => json_encode([null]),
+            'last_turn' => $last_turn,
+            'winner' => null,
+        ]);
     }
 }
